@@ -172,7 +172,6 @@ This is an intentional simplifications:
 
 - **Static data** — reads files, not live log streams. Production would use Kafka/Fluentd.
 - **Sequential execution** — agents run in fixed order. LangGraph could add dynamic routing.
-- **No autonomous decision-making** — Python code controls the flow, not the AI.
 - **No MCP integration** — all data is local. MCP would connect to live SIEM, cloud, and ticketing systems.
 - **Sample CVE data** — RAG uses 15 curated CVEs. Production would index the full NVD (200K+ CVEs).
 
