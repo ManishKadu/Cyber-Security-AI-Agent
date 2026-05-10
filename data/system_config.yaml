@@ -1,0 +1,50 @@
+# ==========================================
+# Sample System Configuration for Audit
+# ==========================================
+
+system:
+  hostname: "web-server-prod-01"
+  os: "Ubuntu 22.04 LTS"
+  last_patched: "2026-03-15"
+
+authentication:
+  password_policy:
+    min_length: 6
+    require_uppercase: false
+    require_special_char: false
+    max_age_days: 0         # 0 = never expires
+    lockout_after_attempts: 0  # 0 = no lockout
+  mfa_enabled: false
+  root_login_allowed: true
+  ssh_password_auth: true
+
+network:
+  firewall_enabled: true
+  open_ports: [22, 80, 443, 3306, 8080, 3389]
+  ssl_version: "TLSv1.0"
+  hsts_enabled: false
+
+logging:
+  audit_logging: false
+  log_retention_days: 7
+  centralized_logging: false
+  integrity_monitoring: false
+
+data_protection:
+  encryption_at_rest: false
+  encryption_in_transit: true
+  backup_enabled: true
+  backup_encrypted: false
+  backup_frequency: "weekly"
+
+access_control:
+  rbac_enabled: false
+  privilege_escalation_monitoring: false
+  session_timeout_minutes: 0   # 0 = no timeout
+  admin_accounts: 5
+
+compliance:
+  last_audit_date: "2025-06-01"
+  vulnerability_scan_frequency: "quarterly"
+  incident_response_plan: false
+  security_training: false

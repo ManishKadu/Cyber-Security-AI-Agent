@@ -1,0 +1,28 @@
+2026-05-10 08:12:01 INFO sshd[1234]: Accepted password for admin from 192.168.1.50 port 22
+2026-05-10 08:12:45 WARNING sshd[1235]: Failed password for root from 10.0.0.99 port 22
+2026-05-10 08:12:46 WARNING sshd[1236]: Failed password for root from 10.0.0.99 port 22
+2026-05-10 08:12:47 WARNING sshd[1237]: Failed password for root from 10.0.0.99 port 22
+2026-05-10 08:12:48 WARNING sshd[1238]: Failed password for root from 10.0.0.99 port 22
+2026-05-10 08:12:49 WARNING sshd[1239]: Failed password for root from 10.0.0.99 port 22
+2026-05-10 08:12:50 WARNING sshd[1240]: Failed password for root from 10.0.0.99 port 22
+2026-05-10 08:12:51 WARNING sshd[1241]: Failed password for root from 10.0.0.99 port 22
+2026-05-10 08:12:52 WARNING sshd[1242]: Failed password for root from 10.0.0.99 port 22
+2026-05-10 08:12:53 WARNING sshd[1243]: Failed password for root from 10.0.0.99 port 22
+2026-05-10 08:12:54 WARNING sshd[1244]: Failed password for root from 10.0.0.99 port 22
+2026-05-10 08:13:01 ERROR apache2[5678]: Client denied by server configuration: /etc/shadow
+2026-05-10 08:13:15 WARNING apache2[5679]: Possible SQL injection attempt: GET /login?user=admin'--&pass=x
+2026-05-10 08:13:30 ERROR apache2[5680]: ModSecurity: Access denied with code 403, pattern match "union.*select" at REQUEST_URI
+2026-05-10 08:14:00 INFO kernel: [UFW BLOCK] IN=eth0 OUT= SRC=203.0.113.50 DST=192.168.1.10 PROTO=TCP DPT=3389
+2026-05-10 08:14:05 INFO kernel: [UFW BLOCK] IN=eth0 OUT= SRC=203.0.113.50 DST=192.168.1.10 PROTO=TCP DPT=445
+2026-05-10 08:14:10 WARNING sudo[9012]: user1 : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/user1
+2026-05-10 08:15:00 ERROR sshd[1300]: reverse mapping checking getaddrinfo for attacker.evil.com failed - POSSIBLE BREAK-IN ATTEMPT!
+2026-05-10 08:15:30 WARNING kernel: TCP: Possible SYN flooding on port 80. Sending cookies.
+2026-05-10 08:16:00 INFO sshd[1350]: Accepted publickey for deploy from 10.0.0.5 port 22
+2026-05-10 08:16:30 ERROR apache2[5700]: File does not exist: /var/www/html/wp-admin
+2026-05-10 08:16:31 ERROR apache2[5701]: File does not exist: /var/www/html/administrator
+2026-05-10 08:16:32 ERROR apache2[5702]: File does not exist: /var/www/html/.env
+2026-05-10 08:16:33 ERROR apache2[5703]: File does not exist: /var/www/html/phpinfo.php
+2026-05-10 08:17:00 CRITICAL kernel: Out of memory: Kill process 4521 (java) score 950 or sacrifice child
+2026-05-10 08:18:00 WARNING auditd[100]: USER_AUTH pid=2200 uid=0 auid=4294967295 msg='op=PAM:authentication acct="root" exe="/usr/sbin/sshd" hostname=45.33.32.156 res=failed'
+2026-05-10 08:19:00 INFO cron[3000]: (root) CMD (/tmp/.hidden/backdoor.sh)
+2026-05-10 08:20:00 WARNING iptables: DROP IN=eth0 SRC=198.51.100.23 DST=192.168.1.10 PROTO=TCP DPT=22 -- Rate limit exceeded
