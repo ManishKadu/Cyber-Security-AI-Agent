@@ -5,7 +5,7 @@ A multi-agent AI-powered cybersecurity system that monitors logs, detects threat
 
 ## What This Project Does
 
-This system runs **5 specialized AI agents** in sequence, each responsible for a different aspect of cybersecurity. Each agent first performs fast, deterministic analysis using regex pattern matching, then sends findings to an LLM (OpenAI GPT or Anthropic Claude) for deeper contextual analysis that rules alone can't catch.
+This system runs **5 specialized AI agents** in sequence, each responsible for a different aspect of cybersecurity. Each agent first performs fast, deterministic analysis using regex pattern matching, then sends findings to an LLM (OpenAI GPT ) for deeper contextual analysis that rules alone can't catch.
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -29,7 +29,7 @@ This system runs **5 specialized AI agents** in sequence, each responsible for a
 Reads system and network logs (SSH, Apache, firewall) to detect brute force attacks, SQL injection attempts, port scans, suspicious cron jobs, and directory enumeration. Uses 7 regex patterns for instant detection, then AI for correlation analysis and MITRE ATT&CK mapping.
 
 ### Agent 2: Threat Intelligence (RAG-Enhanced)
-Takes your software stack (e.g., "apache 2.4", "openssh 8.9") and checks for known vulnerabilities. The **original version** queries the NVD (National Vulnerability Database) API. The **RAG-enhanced version** uses ChromaDB vector search with OpenAI embeddings to find semantically relevant CVEs — meaning "openssh" also finds CVEs about SSH backdoors and sshd race conditions, not just exact keyword matches.
+Takes your software stack  checks for known vulnerabilities. The **original version** queries the NVD (National Vulnerability Database) API. The **RAG-enhanced version** uses ChromaDB vector search with OpenAI embeddings to find semantically relevant CVEs — meaning "openssh" also finds CVEs about SSH backdoors and sshd race conditions, not just exact keyword matches.
 
 ### Agent 3: Vulnerability Scanner
 Performs static code analysis for OWASP Top 10 vulnerabilities: SQL injection, XSS, hardcoded secrets, insecure deserialization, weak cryptography, SSRF, and debug mode. Includes a deliberately vulnerable Flask app as demo code. AI provides fixed code snippets for each finding.
@@ -55,7 +55,7 @@ Five techniques to reduce API costs
 - **Prompt compression** — remove filler words from system prompts
 - **Conditional AI calls** — skip LLM when regex finds nothing
 - **Output limiting** — cap max_tokens to prevent runaway responses
-- **Model selection** — use GPT-4o-mini ($0.15/1M) for simple tasks
+- **Model selection** — use GPT-4o-mini for simple tasks
 
 ### Streamlit Dashboard
 Web-based UI with sidebar controls for model selection, agent toggles, RAG settings, and optimization switches. Results display in tabs with severity badges, compliance charts, and JSON export.
@@ -165,9 +165,6 @@ Each agent follows the same 5-step pattern:
 
 The RAG version (Agent 2) adds an additional step between 1 and 2: query ChromaDB for semantically similar CVEs and inject them into the prompt.
 
-## Cost
-
-Running all 5 agents with GPT-4o-mini costs approximately **$0.003** per full scan (less than a third of a cent). With token optimization enabled, this drops to **$0.001**. The $5 free credits from OpenAI cover of scans.
 
 ## Limitations & Future Work
 
